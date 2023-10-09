@@ -19,8 +19,8 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          role-to-assume: arn:aws:iam::151167878848:role/Role-for-github-testing
-          role-session-name: samplerolesession
+          role-to-assume: arn:aws:iam::151167878848:role/OIDC_github_role
+          role-session-name: OIDC_github_role
           aws-region: ${{ env.AWS_REGION }}
       # Upload a file to AWS s3
       - name:  Copy index.html to s3
