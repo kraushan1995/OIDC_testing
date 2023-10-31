@@ -20,6 +20,6 @@ jobs:
       - name: clone policies from git
         run: git clone https://github.com/kyverno/policies
       - name: Test new resources against existing policies
-        run: ./kyverno apply policies/ ./deployment.yaml
+        run: ./kyverno apply policies/ --resource ./deployment.yaml
       - name: Test pre-defined cases
         run: ./kyverno test tests/
