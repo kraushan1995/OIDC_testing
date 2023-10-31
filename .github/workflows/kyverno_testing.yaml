@@ -13,7 +13,12 @@ jobs:
         run: |
           curl -sLO https://github.com/kyverno/kyverno/releases/download/${{ env.VERSION }}/kyverno-cli_${{ env.VERSION }}_linux_x86_64.tar.gz
           tar -xf kyverno-cli_${{ env.VERSION }}_linux_x86_64.tar.gz
-          ./kyverno version          
+          ./kyverno version
+          
+      - name:
+        run: cd policies
+      - name:
+        run: ls
       - name: Test new resources against existing policies
         run: ./kyverno apply policies/ -r resources/
       - name: Test pre-defined cases
