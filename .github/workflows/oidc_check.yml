@@ -5,7 +5,7 @@ name: AWS example workflow
 on:
   push
 env:
-  BUCKET_NAME : "enpointcentral2023"
+  BUCKET_NAME : "cdcxy"
   AWS_REGION : "ap-south-1"
 # permission can be added at job level or workflow level    
 permissions:
