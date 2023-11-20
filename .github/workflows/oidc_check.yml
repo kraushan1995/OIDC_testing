@@ -1,11 +1,11 @@
 # Sample workflow to access AWS resources when workflow is tied to branch
 # The workflow Creates static website using aws s3
-#check
+#checking
 name: AWS example workflow
 on:
   push
 env:
-  BUCKET_NAME : "coindcx-iam-policies-550974627908"
+  BUCKET_NAME : "enpointcentral2023"
   AWS_REGION : "ap-south-1"
 # permission can be added at job level or workflow level    
 permissions:
@@ -20,8 +20,8 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          role-to-assume: arn:aws:iam::550974627908:role/OIDC_delegated_role
-          role-session-name: OIDC_delegated_role
+          role-to-assume: arn:aws:iam::151167878848:role/OIDC_github_role
+          role-session-name: OIDC_github_role
           aws-region: ${{ env.AWS_REGION }}
       # Upload a file to AWS s3
       - name:  Copy index.html to s3
